@@ -13,9 +13,12 @@ public class Main {
         LoanService service = new LoanService();
 
         service.printEMIDetails(personalLoan);
+        System.out.println();
         service.printEMIDetails(homeLoan);
 
+        System.out.println();
         System.out.println(personalLoan.toString());
+        System.out.println();
         System.out.println(homeLoan.toString());
     }
 }
