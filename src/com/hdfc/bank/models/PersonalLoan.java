@@ -14,7 +14,7 @@ public class PersonalLoan extends Loan {
 
     @Override
     public double calculateEMI() {
-        // Suppose 11% annual interest simplified monthly
+     
         return (loanAmount * 0.11) / 12;
     }
 
@@ -25,7 +25,7 @@ public class PersonalLoan extends Loan {
         System.out.println("Purpose: " + purpose);
     }
 
-    // Overloaded insurance methods
+   
     public void applyInsurance(String insurer, double insuredAmount) {
         System.out.println("Personal loan insurance via " + insurer + " for ₹" + insuredAmount);
     }
