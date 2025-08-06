@@ -7,22 +7,18 @@ import com.hdfc.bank.models.PersonalLoan;
 public class LoanService {
 
     public void printEMIDetails(Loan loan) {
-        loan.printDetails(); 
-
-        double emi = loan.calculateEMI();
-        System.out.println("EMI: " + emi);
-
-
-        if (loan instanceof PersonalLoan) {
-            PersonalLoan pl = (PersonalLoan) loan;
-
-            pl.applyInsurance("Tata AIG", pl.getLoanAmount());
-        } else if (loan instanceof HomeLoan) {
-            HomeLoan hl = (HomeLoan) loan;
-
-            hl.applyInsurance("Tata AIG", hl.getLoanAmount());
+        String type = "Unknown";
+        if (loan instanceof HomeLoan) {
+            type = "HomeLoan";
+        } else if (loan instanceof PersonalLoan) {
+            type = "PersonalLoan";
         }
 
-        System.out.println();
+        double emi = loan.calculateEMI();
+
+        System.out.println("Loan ID: " + loan.getLoanId()
+                + " | Customer: " + loan.getCustomerName()
+                + " | Type: " + type
+                + " | EMI: " + emi);
     }
 }
