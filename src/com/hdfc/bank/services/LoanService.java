@@ -7,7 +7,7 @@ import com.hdfc.bank.models.PersonalLoan;
 public class LoanService {
 
     public void printEMIDetails(Loan loan) {
-        loan.printDetails();  // prints Bank + Loan basics + type-specific
+        loan.printDetails(); 
 
         double emi = loan.calculateEMI();
         System.out.println("EMI: " + emi);
